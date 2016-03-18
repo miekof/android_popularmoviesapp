@@ -1,0 +1,26 @@
+<resources>
+    <!-- name of application-->
+    <string name="app_name" translatable="false">Popular Movies App</string>
+
+    <!--Strings used in Action Bar-->
+    <!--App Setting item-->
+    <string name="action_settings" translatable="true">Settings</string>
+    <string name="access_movie_poster">Movie Poster</string>
+    <string name="pref_display_label">Sort Order Preference</string>
+
+    <!-- Key name for sort preference in SharedPreferences -->
+    <string name="pref_display_key" translatable="false">display</string>
+
+    <!-- Label for sort method pref for Top Rated-->
+    <string name="pref_display_label_toprated">Sort by Top Rated</string>
+
+    <!-- Label for sort method pref for Popularity-->
+    <string name="pref_display_label_popular">Sort by Popularity</string>
+
+    <!-- Value in SharedPreferences for top rated sort option -->
+    <string name="pref_display_toprated" translatable="false">toprated</string>
+
+    <!-- Value in SharedPreferences for popularity sort option -->
+    <string name="pref_display_popular" translatable="false">popular</string>
+    <string name="title_activity_detail">DetailActivity</string>
+</resources>
