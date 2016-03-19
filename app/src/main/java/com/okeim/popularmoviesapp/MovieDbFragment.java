@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -33,7 +33,6 @@ import java.util.ArrayList;
  */
 public class MovieDbFragment extends Fragment {
 
-    private final int MAX_NUM_MOVIES = 20; // max number of movies will be displayed.
     private ArrayList<Movie> movieArray = new ArrayList<Movie>(); //List of movie poster image URI
     private MovieArrayAdapter mMovieArrayAdapter; //Movie Array Adapter
 
@@ -54,10 +53,9 @@ public class MovieDbFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                //String forecast = mMovieArrayAdapter.getItem(position);
+                Movie selectedMovie = mMovieArrayAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                //TODO putExtra to pass detail movie info.
-                // .putExtra(Intent.EXTRA_TEXT, forecast);
+                intent.putExtra(getString(R.string.extra_key_movie), selectedMovie);
                 startActivity(intent);
             }
         });
@@ -102,12 +100,12 @@ public class MovieDbFragment extends Fragment {
         @Override
         protected Movie[] doInBackground(String... params) {
 
-             //Read the display sort order preference from the SharedPreferences
+            //Read the display sort order preference from the SharedPreferences
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
             String displayPrefKey = prefs.getString(getString(R.string.pref_display_key),
                     getString(R.string.pref_display_toprated));
 
-             // These two need to be declared outside the try/catch
+            // These two need to be declared outside the try/catch
             // so that they can be closed in the finally block.
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
@@ -129,7 +127,7 @@ public class MovieDbFragment extends Fragment {
                 } else {
                     displayPref = MOVIE_POPULAR;
                 }
-                 Uri buildUri = Uri.parse(MOVIE_BASE_URL).buildUpon()
+                Uri buildUri = Uri.parse(MOVIE_BASE_URL).buildUpon()
                         .appendEncodedPath(displayPref)
                         .appendQueryParameter(API_KEY_PARAM, BuildConfig.MOVIE_DB_API_KEY)
                         .build();

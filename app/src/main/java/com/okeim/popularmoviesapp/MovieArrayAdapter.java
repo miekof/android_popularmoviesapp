@@ -1,8 +1,6 @@
 package com.okeim.popularmoviesapp;
 
 import android.app.Activity;
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +13,11 @@ import java.util.ArrayList;
 
 /**
  * MovieArrayAdapter
- *
+ * <p>
  * MovieArrayAdapter extends ArrayAdapter.
  * This works similar to ArrayAdapter, instead of displaying strings
  * this takes list of image URL's and displays them into ImageView.
- *
+ * <p>
  * This section of code ıs created based on
  * https://github.com/udacity/android-custom-arrayadapter/blob/parcelable/app/src/main/java/demo/example/com/customarrayadapter/AndroidFlavorAdapter.java
  */
@@ -31,8 +29,8 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
     /**
      * Constructor
      *
-     * @param context        The current context. Used to inflate the layout file.
-     * @param movies      A list of image uri to display in a grid
+     * @param context The current context. Used to inflate the layout file.
+     * @param movies  A list of image uri to display in a grid
      */
     public MovieArrayAdapter(Activity context, ArrayList<Movie> movies) {
         super(context, R.layout.grid_item_movie, movies);
@@ -46,7 +44,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie> {
      * @param position    The AdapterView position that is requesting a view
      * @param convertView The recycled view to populate.
      *                    (search online for "android view recycling" to learn more)
-     * @param parent The parent ViewGroup that is used for inflation.
+     * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
     @Override

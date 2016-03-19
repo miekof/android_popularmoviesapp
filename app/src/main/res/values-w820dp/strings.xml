@@ -1,5 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="access_movie_poster">Movie Poster</string>
-    <string name="pref_display_label">Sort Order Preference</string>
+    <!-- name of application-->
+    <string name="app_name" translatable="false">Popular Movies App</string>
+
+    <!--Strings used in Action Bar-->
+    <!--App Setting item-->
+    <string name="action_settings" translatable="true">Settings</string>
+    <string name="access_movie_poster" translatable="true">Movie Poster</string>
+    <string name="pref_display_label" translatable="true">Sort Order Preference</string>
+
+    <!-- Key name for sort preference in SharedPreferences -->
+    <string name="pref_display_key" translatable="false">display</string>
+
+    <!-- Label for sort method pref for Top Rated-->
+    <string name="pref_display_label_toprated" translatable="true">Sort by Highest Rating</string>
+
+    <!-- Label for sort method pref for Popularity-->
+    <string name="pref_display_label_popular" translatable="true">Sort by Most Popular</string>
+
+    <!-- Value in SharedPreferences for top rated sort option -->
+    <string name="pref_display_toprated" translatable="false">toprated</string>
+
+    <!-- Value in SharedPreferences for popularity sort option -->
+    <string name="pref_display_popular" translatable="false">popular</string>
+
+    <!--Title for Detailed Movie info page-->
+    <string name="title_activity_detail" translatable="true">Movie Detail</string>
+
+    <!--key for extra to pass movie info to Detail Movie Info page-->
+    <string name="extra_key_movie" translatable="false">movie_info</string>
+
+    <!--label for movie rating on DetailActivity-->
+    <string name="detail_label_rating" translatable="true">Rating: </string>
+
+    <!--label for movie release date on DetailActivity-->
+    <string name="detail_label_releasedate" translatable="true">Release Date: </string>
+
+    <!--Detail Activity movie poster accessibility text -->
+    <string name="detail_access_image" translatable="true">Movie Image Thumb Nail</string>
+
+
 </resources>

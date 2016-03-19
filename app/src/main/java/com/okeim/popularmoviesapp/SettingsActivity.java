@@ -24,7 +24,7 @@ public class SettingsActivity extends PreferenceActivity
         // Add 'general' preferences, defined in the XML file
         addPreferencesFromResource(R.xml.pref_general);
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_display_key)));
-        Log.d ("SettingsActivity", getString(R.string.pref_display_key));
+        Log.d("SettingsActivity", getString(R.string.pref_display_key));
     }
 
     /**

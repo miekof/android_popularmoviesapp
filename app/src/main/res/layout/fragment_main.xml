@@ -9,7 +9,7 @@
     tools:context="com.okeim.popularmoviesapp.MovieDbFragment"
     tools:showIn="@layout/content_main">
 
-<!--GridView to display movie posters-->
+    <!--GridView to display movie posters-->
     <GridView
         android:id="@+id/gridview_movie"
         android:layout_width="match_parent"
