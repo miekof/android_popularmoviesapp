@@ -24,7 +24,6 @@ public class SettingsActivity extends PreferenceActivity
         // Add 'general' preferences, defined in the XML file
         addPreferencesFromResource(R.xml.pref_general);
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_display_key)));
-        Log.d("SettingsActivity", getString(R.string.pref_display_key));
     }
 
     /**
@@ -53,7 +52,6 @@ public class SettingsActivity extends PreferenceActivity
             // the preference's 'entries' list (since they have separate labels/values).
             ListPreference listPreference = (ListPreference) preference;
             int prefIndex = listPreference.findIndexOfValue(stringValue);
-            Log.d("SettingsActivity", stringValue);
             if (prefIndex >= 0) {
                 preference.setSummary(listPreference.getEntries()[prefIndex]);
             }

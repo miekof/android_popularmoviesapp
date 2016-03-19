@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -86,7 +85,7 @@ public class MovieDbFragment extends Fragment {
                 PreferenceManager.getDefaultSharedPreferences(getActivity()).
                         getString(getString(R.string.pref_display_key),
                                 getString(R.string.pref_display_toprated));
-        Log.d("db", displayPrefKey);
+
         return displayPrefKey;
 
     }
