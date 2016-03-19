@@ -55,15 +55,17 @@ public class FetchMovieTask extends AsyncTask<String, Void, Movie[]> {
 
         try {
             
-            //To obtain movie information
-            final String MOVIE_BASE_URL = "https://api.themoviedb.org/3/movie/";
             final String API_KEY_PARAM = "api_key";
-           
-            Uri buildUri = Uri.parse(MOVIE_BASE_URL).buildUpon()
+
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("https")
+                    .authority("api.themoviedb.org")
+                    .appendEncodedPath("3")
+                    .appendEncodedPath("movie")
                     .appendEncodedPath(displayPref)
                     .appendQueryParameter(API_KEY_PARAM, BuildConfig.MOVIE_DB_API_KEY)
                     .build();
-            URL url = new URL(buildUri.toString());
+            URL url = new URL(builder.toString());
 
             // Create the request to themoviedb.org, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();
