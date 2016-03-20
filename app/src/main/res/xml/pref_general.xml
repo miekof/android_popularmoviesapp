@@ -7,5 +7,6 @@
         android:entries="@array/pref_display_options"
         android:entryValues="@array/pref_display_values"
         android:key="@string/pref_display_key"
+        android:summary="%s"
         android:title="@string/pref_display_label" />
 </PreferenceScreen>
